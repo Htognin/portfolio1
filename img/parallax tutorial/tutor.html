@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tutor.css">
+    <title>Document</title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<div class="container"></div>
+<!-- <div class="container"></div> -->
+
+<script>
+    var $container = $('.container'); 
+var winHeight = $(window).outerHeight(); 
+
+$(window).on('scroll', function() {
+  var scrollTop = $(window).scrollTop(); 
+  
+  $container.each(function() {
+    var $this = $(this); 
+		var scroll = (scrollTop / winHeight * 3);
+
+		$this.css({
+		  transform: 'translate(' + scroll * 6 + '%, ' + scroll * 1 + '%) rotate(' + scroll * -10 + 'deg)'
+		});
+  });
+}); 
+</script>
+</body>
+</html>
